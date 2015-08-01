@@ -1,15 +1,15 @@
-class SlidesController < ApplicationController
+class PlayerController < ApplicationController
   include ActionController::Live
 
-  def stream
+  def index
     response.headers['Content-Type'] = 'text/event-stream'
 
-    slider = ::SSE::Slider.new(response.stream)
+    player = ::SSE::Player.new(response.stream)
 
     begin
-      slider.write
+      player.write
     ensure
-      slider.close
+      player.close
       logger.info 'INFO: Channel closed'
     end
   end

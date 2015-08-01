@@ -11,14 +11,14 @@ module SSE
     def write
       until @file.eof?
         slide = fetch_slide
-        @stream.write("#{slide}\n")
         sleep 1
+        @stream.write("#{slide}\n") rescue IOError
       end
     end
 
     def close
       # Tell browser don't try to reconnect
-      @stream.write("event: close\n")
+      @stream.write("event: close\n") rescue IOError
 
       @stream.close
     end
