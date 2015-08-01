@@ -1,0 +1,19 @@
+// Place all the styles related to the slides controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.large {
+  position: fixed;
+  top: 28%;
+  left: 40%;
+  cursor: pointer;
+  font-size: 300px !important;
+}
+
+.container {
+  padding-top: 10%;
+}
+
+h1 {
+  @extend .center-align;
+}
