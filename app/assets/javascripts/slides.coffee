@@ -5,7 +5,7 @@ $ ->
 
   source.addEventListener 'message', (e) ->
     console.log e.data
-    slides.push e.data.split('\n').join('<br/>')
+    slides.push e.data.split('\n')
 
   source.addEventListener 'close', (e) ->
     source.close()

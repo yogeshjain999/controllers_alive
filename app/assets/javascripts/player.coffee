@@ -1,3 +1,3 @@
 $ ->
   $(document).on 'DOMNodeInserted', '#player', ->
-    player = videojs('player')
+    videojs('player')

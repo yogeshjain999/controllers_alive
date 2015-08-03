@@ -1,7 +1,7 @@
 module SSE
   class Slider
 
-    SLIDE_SEP = /\|\d\|/
+    SLIDE_SEP = /\|\|/
 
     def initialize(stream)
       @stream = stream
@@ -27,13 +27,13 @@ module SSE
 
     def fetch_slide(buffer = '')
       loop do
-        line = "data: #{markdown.render(@file.gets)}"
+        line = "data: #{markdown.render(@file.gets).gsub("\n", '')}\n"
         if line.match(SLIDE_SEP) then break buffer else buffer += line end
       end
     end
 
     def markdown  
-      @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+      @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true)
     end
   end
 end

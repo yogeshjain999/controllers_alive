@@ -10,11 +10,12 @@
   font-size: 300px !important;
 }
 
-.container {
-  padding-top: 15%;
+h1, h2, h3, h4 {
+  @extend .center-align;
+  padding-top: 13%;
 }
 
-h1, h2, h3, h4 {
+h5, h6 {
   @extend .center-align;
 }
 
@@ -36,4 +37,20 @@ h1, h2, h3, h4 {
   position: fixed !important;
   left: 45% !important;
   top: 45% !important;
+}
+
+ul li {
+  list-style-type: initial;
+  font-size: xx-large;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+em {
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: sans-serif;
 }
